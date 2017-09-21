@@ -59,9 +59,29 @@ namespace Capstone.Classes
         }
         public Change(int amountInCents)
         {
-            this.quarters = amountInCents / 25;
-            this.dimes = amountInCents / 10;
-            this.nickles = amountInCents / 5;
+            this.totalChange = amountInCents;
+            while (amountInCents >= .05M)
+            {
+                if (amountInCents > .25M)
+                {
+                    this.quarters++;
+                    amountInCents -= 25;
+
+                }
+                else if (amountInCents > .10M)
+                {
+                    this.dimes++;
+                    amountInCents -= 10;
+                }
+                else if (amountInCents == .05M)
+                {
+                    this.nickles++;
+                    amountInCents -= 05;
+                }
+
+
+
+            }
 
 
         }

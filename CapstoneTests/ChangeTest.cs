@@ -25,23 +25,17 @@ namespace CapstoneTests
         [TestMethod]
         public void DoWeGetBack3InCents()
         {
-            Change money = new Change(75);
+            Change money = new Change(.90M);
+            int quarters = money.Quarters;
+            int dimes = money.Dimes;
+            int nickles = money.Nickels;
+            Assert.AreEqual(3, quarters);
+            Assert.AreEqual(1, dimes);
+            Assert.AreEqual(1, nickles);
 
-            Assert.AreEqual(3, money.Quarters);
-        }
-        [TestMethod]
-        public void DoWeGet9InCents()
-        {
-            Change money = new Change(90);
-            Assert.AreEqual(9, money.Dimes);
 
+            Assert.AreEqual(.90, money.TotalChange);
         }
-        [TestMethod]
-        public void DoWeGet16inCents()
-        {
-            Change money = new Change(80);
-            Assert.AreEqual(16, money.Nickels);
-
-        }
+        
     }
 }
