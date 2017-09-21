@@ -52,10 +52,14 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+
     <Compile Include="BeverageItemTests.cs" />
     <Compile Include="CandyItemTests.cs" />
     <Compile Include="ChipsItemTests.cs" />
     <Compile Include="GumItemTests.cs" />
+
+    <Compile Include="ChangeTest.cs" />
+
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Capstone\Capstone.csproj">
