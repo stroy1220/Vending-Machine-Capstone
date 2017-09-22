@@ -54,16 +54,19 @@ namespace Capstone.Classes
             //try
             //{
 
-            for (int i = 0; i < Slots.Length - 1; i++)
+            for (int i = 0; i < Slots.Length ; i++)
             {
                 if (slotID == Slots[i])
                 {
                     if (inventory[slotID].Count > 0)
                     {
-                        if (this.currentBalance >= inventory[slotID][1].Cost)
+                        if (this.currentBalance >= inventory[slotID][0].Cost)
                         {
-                            this.currentBalance -= inventory[slotID][1].Cost;
-                            return inventory[slotID][0];
+                            
+                            this.currentBalance -= inventory[slotID][0].Cost;
+                            ItemGeneral im = inventory[slotID][0];
+                            inventory[slotID].Remove(inventory[slotID][0]);
+                            return im;
 
                         }
 
@@ -72,26 +75,8 @@ namespace Capstone.Classes
                 }
 
             }
+
             return null;
-            //}
-            //catch (Exception ex)
-            //{
-            //    if (slotID != Slots[i])
-            //    {
-            //        InvalidSlotSelectionException no = new InvalidSlotSelectionException();
-            //        return ex.Message;
-
-            //    }
-            //    else if(inventory[slotID].Count <= 0)
-            //    {
-            //        return OutOfStockException;
-            //    }
-
-            //    else if (this.currentBalance < inventory[slotID][1].Cost)
-            //    {
-            //        return InsufficientFundsException;
-            //    }
-            //}
 
         }
 

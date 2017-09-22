@@ -35,7 +35,7 @@ namespace Capstone.Classes
             this.totalChange = decimal.ToDouble(amountInDollars);
             while (amountInDollars >= .05M)
             {
-                if (amountInDollars > .25M)
+                if (amountInDollars >= .25M)
                 {
                     this.quarters++;
                     amountInDollars -= .25M;
