@@ -23,6 +23,10 @@ namespace Capstone.Classes
         {
             get { return inventory.Keys.ToArray(); }
         }
+        public VendingMachine(Dictionary<string, List<ItemGeneral>> inventory)
+        {
+            this.inventory = inventory;
+        }
 
         public void FeedMoney(int dollars)
         {
@@ -38,10 +42,7 @@ namespace Capstone.Classes
             inventorysource = new ReadInInventory("vendingmachine.csv");
             inventory = inventorysource.GetInventory();
         }
-        public VendingMachine(Dictionary<string, List<ItemGeneral>> inventory)
-        {
-            this.inventory = inventory;
-        }
+      
 
         public int GetQuantityRemaining(string slotID)
         {
