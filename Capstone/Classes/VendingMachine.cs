@@ -42,6 +42,23 @@ namespace Capstone.Classes
             this.inventory = inventory;
         }
 
+        public int GetQuantityRemaining(string slotID)
+        {
+            return inventory[slotID].Count;
+        }
+
+        //public ItemGeneral Purchase(string slotID)
+        //{
+            
+        //}
+
+        public Change ReturnChange()
+        {
+            Change money = new Change(this.currentBalance);
+            this.currentBalance = 0;
+            return money;
+        }
+
         
 
     }
