@@ -26,7 +26,7 @@ namespace Capstone.Classes
 
         public void FeedMoney(int dollars)
         {
-            this.currentBalance = Convert.ToDecimal(dollars);
+            this.currentBalance += Convert.ToDecimal(dollars);
         }
         public ItemGeneral GetItemAtSlot(string slotID)
         {
@@ -53,22 +53,24 @@ namespace Capstone.Classes
             //try
             //{
 
-                for (int i = 0; i < Slots.Length - 1; i++)
+            for (int i = 0; i < Slots.Length - 1; i++)
+            {
+                if (slotID == Slots[i])
                 {
-                    if (slotID == Slots[i])
+                    if (inventory[slotID].Count > 0)
                     {
-                        if (inventory[slotID].Count > 0)
+                        if (this.currentBalance >= inventory[slotID][1].Cost)
                         {
-                            if (this.currentBalance >= inventory[slotID][1].Cost)
-                            {
-                                return inventory[slotID][0];
-                            }
+                            this.currentBalance -= inventory[slotID][1].Cost;
+                            return inventory[slotID][0];
 
                         }
 
                     }
 
                 }
+
+            }
             return null;
             //}
             //catch (Exception ex)
@@ -83,7 +85,7 @@ namespace Capstone.Classes
             //    {
             //        return OutOfStockException;
             //    }
-                
+
             //    else if (this.currentBalance < inventory[slotID][1].Cost)
             //    {
             //        return InsufficientFundsException;
