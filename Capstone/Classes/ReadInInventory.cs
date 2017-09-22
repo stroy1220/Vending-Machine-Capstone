@@ -18,8 +18,9 @@ namespace Capstone.Classes
 
         public ReadInInventory(string filePath)
         {
-            filePath = @"C:\Users\Samantha Troy\Desktop\c-module-1-capstone-team-7\etc\vendingmachine.csv";
-            this.filePath = filePath;
+            filePath = @"C: \Users\Samantha Troy\Desktop\c-module-1-capstone-team-7\etc\vendingmachine.csv";
+            //string file = @"\vendingmachine.csv";
+            this.filePath = filePath ;
 
         }
 

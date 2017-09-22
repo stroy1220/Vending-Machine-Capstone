@@ -10,7 +10,7 @@ namespace CapstoneTests
         [TestMethod]
         public void AmountOfInvItems()
         {
-            ReadInInventory monkey = new ReadInInventory(@"C: \Users\Samantha Troy\Desktop\c - module - 1 - capstone - team - 7\etc\vendingmachine.csv");
+            ReadInInventory monkey = new ReadInInventory(@"C:\Users\Samantha Troy\Desktop\c - module - 1 - capstone - team - 7\etc\vendingmachine.csv");
             //int inv =monkey.GetInventory();
 
 
