@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Capstone.Classes;
+using System.IO;
 
 namespace CapstoneTests
 {
@@ -10,8 +11,10 @@ namespace CapstoneTests
         [TestMethod]
         public void AmountOfInvItems()
         {
-
-            ReadInInventory monkey = new ReadInInventory(@"C: \Users\Scott Miller\Desktop\c - module - 1 - capstone - team - 7\etc\vendingmachine.csv");
+                        
+            string filepath = "vendingmachine.csv";
+            //
+            ReadInInventory monkey = new ReadInInventory(filepath);
 
 
 

@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace Capstone.Classes
 {
-    class InvalidSlotSelectionException : VendingMachineException
+   public class InvalidSlotSelectionException : VendingMachineException
     {
+       
+        public string Invalid()
+        {
+            return "Selection does not exist";
+        }
         //while selection is within range; proceed with transaction
         //if not in range ; return error/menu
 

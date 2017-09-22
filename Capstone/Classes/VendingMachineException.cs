@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Capstone.Classes
 {
-    class VendingMachineException
+   public class VendingMachineException
     {
 
      //wtf goes here?   

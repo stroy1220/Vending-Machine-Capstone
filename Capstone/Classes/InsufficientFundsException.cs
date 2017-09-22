@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Capstone.Classes
 {
-    class InsufficientFundsException : VendingMachineException
+   public class InsufficientFundsException : VendingMachineException
     {
 
         //if balance >= cost; return items
